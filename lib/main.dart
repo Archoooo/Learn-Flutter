@@ -13,25 +13,24 @@ class MyApp extends StatelessWidget {
       Colors.lightGreen,
       Colors.red
     ];
+    final List<Widget> myText = List.generate(
+        4,
+        (index) => Text(
+              //index.toString()
+              "${index + 1}",
+              style: TextStyle(
+                  fontSize: 15 + double.parse(index.toString()),
+                  color: myColor[index]),
+            ));
 
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text("ListView"),
         ),
-        body: ListView.separated(
-            separatorBuilder: (context, index) {
-              return Divider(
-                color: Colors.red,
-              );
-            },
-            itemCount: myColor.length,
-            itemBuilder: (context, index) {
-              return Text(
-                "HelloWorld",
-                style: TextStyle(color: myColor[index]),
-              );
-            }),
+        body: ListView(
+          children: myText,
+        ),
       ),
     );
   }
