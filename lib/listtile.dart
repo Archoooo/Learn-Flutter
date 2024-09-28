@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,13 +14,13 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 19, 183, 25),
-          title: Text(
+          title: const Text(
             "wangsaf",
             style: TextStyle(fontFamily: 'Stick'),
           ),
         ),
         body: ListView(
-          children: [
+          children: const [
             ListTile(
               contentPadding:
                   EdgeInsets.symmetric(horizontal: 20, vertical: 10),
