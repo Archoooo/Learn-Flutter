@@ -1,11 +1,11 @@
+import 'dart:nativewrappers/_internal/vm/lib/internal_patch.dart';
+
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+class DateFormat extends StatelessWidget {
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
           title: const Text("Date"),
         ),
         body: Center(
-          child: Text(DateTime(2021).toString()),
+          child: Text(DateTime.now().toString()),
         ),
       ),
     );
