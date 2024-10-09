@@ -1,5 +1,4 @@
-import 'package:firstapp/TabBar.dart';
-import 'package:firstapp/appbar.dart';
+import 'package:firstapp/TabBar2.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: tabBar(),
+      home: tabBar2(),
     );
   }
 }
