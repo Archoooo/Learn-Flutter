@@ -16,13 +16,20 @@ class txtF extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(10),
                     child: TextField(
-                        // autocorrect: true,
-                        // autofocus: true,
-                        // // obscureText: true,
-                        // // obscuringCharacter: "V",
-                        // keyboardType: TextInputType.datetime,
+                      // autocorrect: true,
+                      autofocus: true,
+                      // // obscureText: true,
+                      // // obscuringCharacter: "V",
+                      // keyboardType: TextInputType.datetime,
+                      showCursor: true,
 
-                        ),
+                      decoration: InputDecoration(
+                          icon: Icon(
+                            Icons.person_outline_sharp,
+                            size: 40,
+                          ),
+                          border: OutlineInputBorder()),
+                    ),
                   ),
                 ),
                 Container(
@@ -33,20 +40,28 @@ class txtF extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(5),
                     child: TextField(
-
-                        // autocorrect: true,
-                        // autofocus: true,
-                        // // obscureText: true,
-                        // // obscuringCharacter: "V",
-                        // keyboardType: TextInputType.datetime,
-                        ),
+                      // autocorrect: true,
+                      // autofocus: true,
+                      // // obscureText: true,
+                      obscuringCharacter: "*",
+                      // keyboardType: TextInputType.datetime,
+                      showCursor: true,
+                      decoration: InputDecoration(
+                          icon: Icon(
+                            Icons.lock_reset,
+                            size: 40,
+                          ),
+                          border: OutlineInputBorder()),
+                    ),
                   ),
                 ),
                 Container(
                   child: Padding(
                     padding: const EdgeInsets.all(30),
                     child: TextButton.icon(
-                        onPressed: ColorScheme.dark, label: Text("Log In"),),
+                      onPressed: ColorScheme.dark,
+                      label: Text("Log In"),
+                    ),
                   ),
                 )
               ],
