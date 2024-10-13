@@ -4,13 +4,38 @@ class txtF extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(),
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
+            padding: const EdgeInsets.symmetric(vertical: 5),
             child: Column(
               children: [
+                Center(
+                    child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Title(
+                    color: Colors.black,
+                    child: Text(
+                      "WELCOME",
+                      style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Stick"),
+                    ),
+                  ),
+                )),
+                Container(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Image(
+                      image: AssetImage("images/LB_call.png"),
+                      width: 200,
+                    ),
+                  ),
+                ),
                 Container(
                   child: Padding(
                     padding: const EdgeInsets.all(10),
@@ -82,15 +107,20 @@ class txtF extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                // Container(
+                //   child: Padding(
+                //     padding: const EdgeInsets.all(30),
+                //     child: TextButton.icon(
+                //       onPressed: ColorScheme.dark,
+                //       label: Text("Log In"),
+                //     ),
+                //   ),
+                // )
                 Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(30),
-                    child: TextButton.icon(
-                      onPressed: ColorScheme.dark,
-                      label: Text("Log In"),
-                    ),
-                  ),
-                )
+                    margin: EdgeInsets.all(20),
+                    child:
+                        ElevatedButton(onPressed: () {}, child: Text("Log In")))
               ],
             ),
           ),
