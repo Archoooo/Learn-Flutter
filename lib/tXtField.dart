@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class txtF extends StatelessWidget {
+class txtF extends StatefulWidget {
+  @override
+  State<txtF> createState() => _txtFState();
+}
+
+class _txtFState extends State<txtF> {
   @override
   Widget build(BuildContext context) {
+    String User = "";
+    String hello = "Welcome";
+    final TextEditingController MyControll = TextEditingController();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -18,12 +27,14 @@ class txtF extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   child: Title(
                     color: Colors.black,
-                    child: Text(
-                      "WELCOME",
-                      style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Stick"),
+                    child: Container(
+                      child: Text(
+                        hello + User,
+                        style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Stick"),
+                      ),
                     ),
                   ),
                 )),
@@ -41,11 +52,22 @@ class txtF extends StatelessWidget {
                     padding: const EdgeInsets.all(10),
                     child: TextField(
                         // autocorrect: true,
-                        autofocus: true,
                         // // obscureText: true,
                         // // obscuringCharacter: "V",
                         // keyboardType: TextInputType.datetime,
+                        controller: MyControll,
+                        onSubmitted: (value) {
+                          print(value);
+                          setState(() {
+                            User = value;
+                          });
+                        },
+                        onChanged: (value) {
+                          print("sdadsada");
+                        },
+                        onEditingComplete: () => Text("edit succes"),
                         showCursor: true,
+                        autofocus: true,
                         decoration: InputDecoration(
                           icon: Icon(
                             Icons.person_outline_sharp,
@@ -75,10 +97,10 @@ class txtF extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(5),
                     child: TextField(
-                      // autocorrect: true,
-                      // autofocus: true,
                       obscureText: true,
                       obscuringCharacter: "*",
+                      // autocorrect: true,
+                      // autofocus: true,
                       // keyboardType: TextInputType.datetime,
                       showCursor: true,
                       decoration: InputDecoration(
